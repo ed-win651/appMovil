@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../home/screens/sos_page.dart';
 
 class InicioPage extends StatefulWidget {
   const InicioPage({super.key});
@@ -11,9 +12,17 @@ class _InicioPageState extends State<InicioPage> {
   int _selectedBottomIndex = 0;
 
   void _onBottomItemTapped(int index) {
-    setState(() {
-      _selectedBottomIndex = index;
-    });
+    if (index == 2) {
+      // Botón SOS presionado - navegar a SosPage
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SosPage()),
+      );
+    } else {
+      setState(() {
+        _selectedBottomIndex = index;
+      });
+    }
   }
 
   @override
@@ -62,7 +71,7 @@ class _InicioPageState extends State<InicioPage> {
             labelColor: Colors.white,
             unselectedLabelColor: Colors.black38,
             tabs: [
-              Tab(text: ''),
+              Tab(text: 'INICIO'),
               Tab(text: 'REPORTAR DELITOS'),
               Tab(text: 'HACER DENUNCIAS'),
               Tab(text: 'NOTICIAS'),

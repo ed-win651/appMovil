@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../home/screens/home_page.dart';
+import '../screens/Inicio_page.dart';
 import '../widgets/login_button.dart';
 import '../widgets/custom_text_field.dart';
 import 'signp_page.dart';
@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState!.validate()) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        MaterialPageRoute(builder: (context) => const InicioPage()),
       );
     }
   }
@@ -119,7 +119,9 @@ class _LoginPageState extends State<LoginPage> {
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.black87,
                         minimumSize: const Size(double.infinity, 50),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                         side: const BorderSide(color: Colors.grey),
                       ),
                       onPressed: () {
@@ -137,7 +139,10 @@ class _LoginPageState extends State<LoginPage> {
                     RichText(
                       text: TextSpan(
                         text: '¿No tienes una cuenta? ',
-                        style: const TextStyle(color: Colors.black87, fontSize: 14),
+                        style: const TextStyle(
+                          color: Colors.black87,
+                          fontSize: 14,
+                        ),
                         children: [
                           TextSpan(
                             text: 'Regístrate',
@@ -146,13 +151,16 @@ class _LoginPageState extends State<LoginPage> {
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                             ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const SignpPage()),
-                                );
-                              },
+                            recognizer:
+                                TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const SignpPage(),
+                                      ),
+                                    );
+                                  },
                           ),
                         ],
                       ),

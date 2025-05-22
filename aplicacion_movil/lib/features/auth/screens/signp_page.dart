@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../home/screens/home_page.dart';
+import '../home/screens/sos_page.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/login_button.dart';
 
@@ -31,7 +31,7 @@ class _SignpPageState extends State<SignpPage> {
     if (_formKey.currentState!.validate()) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        MaterialPageRoute(builder: (context) => const SosPage()),
       );
     }
   }

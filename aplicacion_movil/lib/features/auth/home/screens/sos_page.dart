@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SosPage extends StatelessWidget {
+  const SosPage({super.key});
 
   void _callNumber(String number) async {
     final Uri url = Uri(scheme: 'tel', path: number);
